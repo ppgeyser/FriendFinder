@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey | EarBuds</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <br>
+    <div class="container">
+
+        <div class="card">
+            <h5 class="card-header">Survey Questions</h5>
+            <div class="card-body">
+
+                <form>
+                    <p class="font-weight-bolder">About You</p>
+                    <p>Please fill in your name and provide a URL to a profile picture of your choice.</p>
+                    <hr>
+                    <div class="form-group">
+                        <label for="inputName">Name (Required)</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputImageURL">Profile Picture (Required)</label>
+                        <input type="text" class="form-control" id="inputImageURL"
+                            placeholder="Insert URL of your profile picture here.">
+                    </div>
+                    <hr>
+                    <p class="font-weight-bolder">Survey</p>
+                    <p>Please read each of the statements carefully, and then use the slider to indicate your opinion regarding the statement. The slider ranges from "Strongly Disagree" to "Strongly Agree." All questions are required.</p>
+                    <hr>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement1" class="font-weight-bold">1) "I'ma let you finish, but Beyoncé had one of the best videos of all time!"</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement1">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement2" class="font-weight-bold">2) Music can still be good without having to be technical or intricate.</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement2">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement3" class="font-weight-bold">3) I was born in the wrong era of music.</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement3">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement4" class="font-weight-bold">4) The Beatles are overrated.</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement4">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement5" class="font-weight-bold">5) You prefer listening to full albums rather than individual songs or playlists.</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement5">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement6" class="font-weight-bold">6) Soundcloud > Spotify</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement6">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement7" class="font-weight-bold">7) Your main method of music discovery is by reading Pitchfork, watching theneedledrop, etc.</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement7">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement8" class="font-weight-bold">8) You know all the words to every single song on the Top 40 list.</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement8">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement9" class="font-weight-bold">9) You unironically rocked a bucket hat in the early 2010s.</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement9">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label for="Statement10" class="font-weight-bold">10) I like listening to Jimi Hendrix because he is a guitar god.</label>
+                        <input type="range" class="custom-range" min="0" max="5" id="Statement10">
+                        <span class="float-left">Strongly Disagree</span><span class="float-right">Strongly Agree</span>
+                    </div>
+                    <br>
+                    <br>
+                    <a href="#" class="btn btn-primary">Submit</a>
+                </form>
+            </div>
+        </div>
+        <br>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API Friends List</a> | <a
+                        href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
