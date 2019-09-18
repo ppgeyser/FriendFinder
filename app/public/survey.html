@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey | EarBuds</title>
 
+    <!-- Jquery CDN -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -119,6 +125,23 @@
         </footer>
 
     </div>
+    <!-- Modal code goes here -->
 </body>
 
 </html>
+
+<!-- Submit button on click
+
+    create new object to store data from name, image url, and answers
+        answers can be its own object, structured so that the key is the statement and value is the score
+            statement1: x
+            statement2: y
+            statement3: z
+
+    $.post data to /api/friends
+        callback: 
+            return the person most similar to the person we just sent to API.
+            Person should then populate in modal.
+
+    clear form after submission -->
+
