@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey | EarBuds</title>
 
-    <!-- Jquery CDN -->
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-  crossorigin="anonymous"></script>
-
-    <!-- Bootstrap CDN -->
+    <!-- CDNs -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
             <h5 class="card-header">Survey Questions</h5>
             <div class="card-body">
 
-                <form>
+                <form id="form">
                     <p class="font-weight-bolder">About You</p>
                     <p>Please fill in your name and provide a URL to a profile picture of your choice. To get a profile picture URL, you can go to any social media site that has your profile picture, right-click on the picture, and then click "Copy image address."</p>
                     <hr>
@@ -112,7 +113,7 @@
                     </div>
                     <br>
                     <br>
-                    <a href="#" class="btn btn-primary">Submit</a>
+                    <a href="#" class="btn btn-primary" id="submit-button">Submit</a>
                 </form>
             </div>
         </div>
@@ -126,22 +127,115 @@
 
     </div>
     <!-- Modal code goes here -->
+    <div class="modal fade" id="blankModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Error!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Text box cannot be blank.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Best Match!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-name"></h2>
+                    <img id="match-img" src="" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
 
 <script type="text/javascript">
 // Submit button on click
+$("#submit-button").on("click", function() {
 
-//     create new object to store data from name, image url, and answers
-//         answers should be an array
+    event.preventDefault();
 
-//     $.post data to /api/friends
-//         callback: 
-//             return the person most similar to the person we just sent to API.
-//             Person should then populate in modal.
+    //input validation
+    if ($("#inputName").val().length === 0) {
+        //alert blank input
+        $('#blankModal').modal();
 
-//     clear form after submission
+    } else if ($("#inputImageURL").val().length === 0) {
+        //alert blank input
+        $('#blankModal').modal();
+
+    } else {
+
+        // create new object to store data from name, image url, and answers
+        var newFriend = {
+            name: $("#inputName").val().trim(),
+            photo: $("#inputImageURL").val().trim(),
+            //answers should be an array
+            scores: [
+                $("#Statement1").val(),
+                $("#Statement2").val(),
+                $("#Statement3").val(),
+                $("#Statement4").val(),
+                $("#Statement5").val(),
+                $("#Statement6").val(),
+                $("#Statement7").val(),
+                $("#Statement8").val(),
+                $("#Statement9").val(),
+                $("#Statement10").val()
+                ]
+        };
+            
+        console.log(newFriend);
+
+        // $.post data to /api/friends
+        $.post("/api/friends", newFriend, function(data) {
+
+        // callback: 
+            //return the person most similar to the person we just sent to API. Person should then populate in modal.
+            $("#match-name").text(data.name);
+            $("#match-img").attr("src", data.photo);
+
+            // Show the modal with the best match
+            $("#resultsModal").modal("toggle");
+
+            //Reset form afterwards
+            $("#inputName").val("");
+            $("#inputImage").val("");
+            $("#Statement1").val(3);
+            $("#Statement2").val(3);
+            $("#Statement3").val(3);
+            $("#Statement4").val(3);
+            $("#Statement5").val(3);
+            $("#Statement6").val(3);
+            $("#Statement7").val(3);
+            $("#Statement8").val(3);
+            $("#Statement9").val(3);
+            $("#Statement10").val(3);
+        });
+
+    };
+
+});
+
 
 </script>
 
