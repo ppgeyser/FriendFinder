@@ -4,12 +4,12 @@ var friendData = require("../data/friends.js");
 
 module.exports = function(app) {
 
-    //setting up a JSON response for when a user visists /api/friends
+    //setting up a JSON response for when a GET request
     app.get("/api/friends", function(req, res) {
         res.json(friendData);
     });
 
-    //setting up response when data is submitted
+    //setting up response for a post request
     app.post("/api/friends", function(req, res) {
 
         //Push data into friendArray
