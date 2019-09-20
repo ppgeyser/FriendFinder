@@ -12,7 +12,7 @@ app.use(express.json());
 
 //import routers for html and api
 require("./app/routing/htmlRoutes.js")(app);
-// require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/apiRoutes.js")(app);
 
 // Starts the server to begin listening
 app.listen(PORT, function() {
