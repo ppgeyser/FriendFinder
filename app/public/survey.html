@@ -126,9 +126,9 @@
         </footer>
 
     </div>
-    <!-- Modal code goes here -->
-    <div class="modal fade" id="blankModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <!-- Blank input field modal -->
+    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" id="blankModal">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Error!</h5>
@@ -145,8 +145,10 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <!-- Results Modal -->
+    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true" id="resultsModal">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Best Match!</h5>
@@ -155,8 +157,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img" src="" alt="">
+                    <div class="container-fluid">
+                        <h2 id="match-name"></h2>
+                        <img id="match-img" src="" alt="" style="width: 50%;">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
