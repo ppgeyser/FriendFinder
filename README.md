@@ -2,24 +2,20 @@
 
 EarBuds is an app that determines your music taste compatibility with other people via a survey. Once the survey is completed, you are presented with your perfect musical taste soulmate! 
 
+## Home Page
 - - -
-
-Home Page
 ![](https://i.imgur.com/Qrq2jSY.png)
 
+## Survey Page
 - - -
-
-Survey Page
 ![](https://i.imgur.com/ulxGmk7.png)
 
+## Results Modal once you have completed entire survey
 - - -
-
-Results Modal once you have completed entire survey
 ![](https://i.imgur.com/6Ar99tf.jpg)
 
+## Error Modal if you don't fill out text forms
 - - -
-
-Error Modal if you don't fill out text forms
 ![](https://i.imgur.com/mcfF8OS.png)
 
 
