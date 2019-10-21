@@ -6,7 +6,7 @@ EarBuds is an app that determines your music taste compatibility with other peop
 ![](https://i.imgur.com/Qrq2jSY.png)
 
 ## Survey Page
-![](https://i.imgur.com/ulxGmk7.png)
+![](https://user-images.githubusercontent.com/50184318/67231242-cb01b500-f3f3-11e9-8910-e589657178e4.png)
 
 ## Results Modal once you have completed entire survey
 ![](https://i.imgur.com/6Ar99tf.jpg)
